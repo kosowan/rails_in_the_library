@@ -6,4 +6,7 @@ class Book < ApplicationRecord
   # validates :title, uniqueness: true,
   # validates :rating, numericality: true,
   # validates :reviews, :price, numericality: {only_integer: true}
+
+  has_many :book_years
+  has_many :years, through: :book_years
 end
