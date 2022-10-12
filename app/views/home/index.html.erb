@@ -1,0 +1,6 @@
+<h1>Home#index</h1>
+<ol>
+  <% @books.each do |book| %>
+    <li><%=link_to book.title, book %> by <%=link_to book.author.name, book.author %></li>
+  <% end %>
+</ol>
