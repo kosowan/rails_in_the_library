@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'years/index'
-  get 'years/show'
+
   root to: "home#index"
 
   # get 'home/index'
+  get 'years/index'
+  get 'years/show'
   get 'genres/index'
   get 'genres/show'
   get 'authors/index'
@@ -17,4 +18,5 @@ Rails.application.routes.draw do
   resources :books, only: [:index, :show]
   resources :authors, only: [:index, :show]
   resources :genres, only: [:index, :show]
+  resources :years, only: [:index, :show]
 end
