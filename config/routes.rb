@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'years/index'
+  get 'years/show'
   root to: "home#index"
 
   # get 'home/index'
