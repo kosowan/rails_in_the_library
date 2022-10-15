@@ -7,4 +7,12 @@
 
 <li>author: <%=link_to @book.author.name, @book.author %></li>
 <h3>genre: <%= link_to @book.genre.name, @book.genre %></h3>
-<h3>years: <%= @book.years.map(&:year).join(", ") %></h3>
+<h3>
+  years:
+    <% @book.years.each do |year| %>
+      <%= link_to year.year, year %>
+    <% end %>
+</h3>
+
+
+
