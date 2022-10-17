@@ -1,0 +1,6 @@
+<h1>Info#index</h1>
+<p>I am pulling data from a csv file from a dataset found on Kaggle.com called Amazon Top 50 Bestselling Books 2009-2019. The data is structured as one ‘Books’ table with columns for the title of the book, author, rating, number of reviews, price, year(s) it was in the top 50 and genre. </p>
+<br>
+<p>I plan on adding an Authors table with a one to many relationship to the Books table. Also, a genre table with a one to many relationship to the books table (since a book can be either fiction or non-fiction). Finally a Year table with a many to many relationship to the books table since a book can be in the top 50 more than one year, and a given year has 50 top books in it. This will require a joiner table.</p>
+<br>
+<%= image_tag 'libraryerd.png' %>

@@ -2,6 +2,7 @@
 <html>
   <head>
     <title><%= yield(:html_title) + " - " if content_for?(:html_title) %> Bestselling Books</title>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,7 +16,9 @@
   <section class="section">
       <div class="container">
         <h1 class="title is-1">Amazon's Bestselling Books</h1>
+        <%= render partial: 'common/menu' %>
         <%= yield %>
+        <%= render partial: 'common/footer' %>
       </div>
     </section>
   </body>

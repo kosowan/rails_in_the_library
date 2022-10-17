@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'authors/show'
   get 'books/index'
   get 'books/show'
+  get 'info/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
   resources :authors, only: [:index, :show]
   resources :genres, only: [:index, :show]
   resources :years, only: [:index, :show]
+  resources :info, only: :index
 end
