@@ -1,5 +1,5 @@
-<h1>Books#index - by rating desc</h1>
-<ol>
+<h2 class="title">Books#index - by rating desc</h2>
+<ol class="ml-5">
   <% @books.each do |book| %>
     <li><%=link_to book.title, book %> by <%=link_to book.author.name, book.author %></li>
   <% end %>
