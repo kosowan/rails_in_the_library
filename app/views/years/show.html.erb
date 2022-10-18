@@ -1,7 +1,10 @@
-<h1>Years#show</h1>
-<h1><%= @year.year %></h1>
-<ol>
+<div class="box has-background-success-light">
+  <h2 class="title">Top 50 books of <%= @year.year %></h2>
+  <ol>
     <% @year.books.order("rating DESC").each do |book| %>
-    <li><%= link_to book.title, book %></li>
-  <% end %>
-</ol>
+      <li><%= link_to book.title, book %></li>
+    <% end %>
+  </ol>
+</div>
+
+

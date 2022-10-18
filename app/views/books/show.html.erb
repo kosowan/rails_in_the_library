@@ -1,18 +1,34 @@
 <% content_for (:html_title) {@book.title} %>
 
-<h1><%= @book.title %></h1>
-<h3>rating: <%= @book.rating %></h3>
-<h3>number of reviews: <%= @book.reviews %></h3>
-<h3>price: <%= @book.price %></h3>
+<div class="box has-background-link-light">
 
-<li>author: <%=link_to @book.author.name, @book.author %></li>
-<h3>genre: <%= link_to @book.genre.name, @book.genre %></h3>
-<h3>
-  years:
-    <% @book.years.each do |year| %>
-      <%= link_to year.year, year %>
-    <% end %>
-</h3>
+  <h1 class="title"><%= @book.title %></h1>
+  <h3>
+    rating: <%=@book.rating%>/5
+              <% if @book.rating > 4.7 %>
+                🤩
+              <% elsif @book.rating > 4.4 %>
+                😎
+                <% elsif @book.rating > 3.9 %>
+                😊
+              <% else %>
+                😢
+              <% end %>
+  </h3>
+  <h3>number of reviews: <%= @book.reviews %></h3>
+  <h3>price: <%= @book.price %></h3>
+
+  <h3>author: <%=link_to @book.author.name, @book.author %></h3>
+  <h3>genre: <%= link_to @book.genre.name, @book.genre %></h3>
+  <h3>
+    years:
+      <% @book.years.each do |year| %>
+        <%= link_to year.year, year %>
+      <% end %>
+  </h3>
+
+</div>
+
 
 
 

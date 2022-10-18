@@ -1,4 +1,43 @@
-<h1>Genres#show</h1>
+<div class="box has-background-danger-light">
+  <table class="table is-striped is-hoverable is-fullwidth">
+
+      <thead>
+          <tr>
+            <th class="title"><%= @genre.name%> Books</th>
+          </tr>
+      </thead>
+
+      <tbody>
+        <% @genre.books.order("rating DESC").each do |book| %>
+          <tr>
+            <td><%= link_to book.title, book %></td>
+            <td>by <%= link_to book.author.name, book.author %></td>
+            <td>
+              rating: <%=book.rating%>/5
+              <% if book.rating > 4.7 %>
+                🤩
+              <% elsif book.rating > 4.4 %>
+                😎
+                <% elsif book.rating > 3.9 %>
+                😊
+              <% else %>
+                😢
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+
+  </table>
+
+  <p class="title"><%= @genre.name%> Books</p>
+      <p class="title">Books</p>
+      <ul>
+        <% @genre.books.order("rating DESC").each do |book| %>
+          <li><%= link_to book.title, book %> </li>
+        <% end %>
+      </ul>
+</div>
 <h1><%= @genre.name %></h1>
 <ul>
     <% @genre.books.order("rating DESC").each do |book| %>
