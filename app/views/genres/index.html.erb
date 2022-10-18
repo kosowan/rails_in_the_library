@@ -1,6 +1,9 @@
-<h1>Genres</h1>
-<ol>
-  <% @genres.each do |genre| %>
-    <li><%= link_to genre.name, genre %></li>
-  <% end %>
-</ol>
+<div class="box has-background-danger-light">
+  <p class="title">Genres</p>
+  <ul>
+    <% @genres.each do |genre| %>
+      <li><%= link_to genre.name, genre %></li>
+    <% end %>
+</ul>
+</div>
+

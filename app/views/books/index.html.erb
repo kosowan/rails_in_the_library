@@ -1,6 +1,48 @@
-<h2 class="title">Books#index - by rating desc</h2>
-<ol class="ml-5">
-  <% @books.each do |book| %>
-    <li><%=link_to book.title, book %> by <%=link_to book.author.name, book.author %></li>
-  <% end %>
-</ol>
+<div class="box has-background-link-light">
+
+  <table class="table is-hoverable is-fullwidth">
+
+    <thead>
+        <tr>
+          <th class="title">All Books Ordered by Rating</th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <ol>
+        <% @books.each do |book| %>
+
+          <tr>
+            <td><li><%=link_to book.title, book %></td>
+            <td> by <%=link_to book.author.name, book.author %></li></td>
+          </tr>
+
+          <tr>
+            <td>
+              <progress class="progress is-info" value="<%= book.rating %>" max=5>
+                <%= book.rating %>
+              </progress>
+            </td>
+            <td>
+              <p>rating: <%=book.rating%>/5</p>
+              <% if book.rating > 4.7 %>
+                <p>🤩</p>
+              <% elsif book.rating > 4.4 %>
+                <p>😎</p>
+                <% elsif book.rating > 4.4 %>
+                <p>😊</p>
+              <% else %>
+                <p>😢</p>
+              <% end %>
+            </td>
+          </tr>
+
+        <% end %>
+      </ol>
+    </tbody>
+
+  </table>
+</div>
+
+
+

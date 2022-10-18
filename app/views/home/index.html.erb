@@ -1,24 +1,46 @@
-<h1>Home#index</h1>
 
-<div class="columns">
 
-  <div class="column">
-    <h2 class="title">Years</h2>
-    <ul class="ml-5">
-      <% @years.each do |year| %>
-        <li><%=link_to year.year, year %></li>
-      <% end %>
-    </ul>
+<div class="tile is-ancestor">
+  <div class="tile is-4 is-vertical is-parent">
+
+    <div class="tile is-child box has-background-danger-light">
+      <p class="title">Genres</p>
+      <ul class="ml-5">
+        <% @genres.each do |genre| %>
+          <li><%=link_to genre.name, genre %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tile is-child box has-background-success-light">
+      <p class="title">Years</p>
+      <ul class="ml-5">
+        <% @years.each do |year| %>
+          <li><%=link_to year.year, year %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="tile is-child box has-background-link-light">
+      <p class="title">Authors</p>
+      <ul class="ml-5">
+        <% @authors.each do |author| %>
+          <li><%=link_to author.name, author %></li>
+        <% end %>
+      </ul>
+    </div>
+
   </div>
 
-  <div class="column">
-    <h2 class="title">Books</h2>
+  <div class="tile is-parent">
+    <div class="tile is-child box has-background-warning-light">
+      <p class="title">Books</p>
       <ol class="ml-5">
         <% @books.each do |book| %>
           <li><%=link_to book.title, book %> by <%=link_to book.author.name, book.author %></li>
         <% end %>
       </ol>
+    </div>
   </div>
-
 </div>
 

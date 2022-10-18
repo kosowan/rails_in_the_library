@@ -1,6 +1,13 @@
-<h1>Years#index</h1>
-<ol>
-  <% @years.each do |year| %>
-    <li><%=link_to year.year, year %></li>
-  <% end %>
-</ol>
+  <div class="box has-background-success-light">
+    <p class="title">Years</p>
+    <p class="title-2">Select a year to view its top 50 bestsellers!</p>
+
+    <ul class="mt-5">
+      <% @years.each do |year| %>
+        <li><%=link_to year.year, year %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+

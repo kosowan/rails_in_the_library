@@ -1,6 +1,23 @@
-<h1>Authors</h1>
-<ol>
-  <% @authors.each do |author| %>
-    <li><%= link_to author.name, author %></li>
-  <% end %>
-</ol>
+<div class="box has-background-link-light">
+
+  <table class="table is-striped is-hoverable is-fullwidth">
+
+   <thead>
+      <tr>
+        <th class="title">Authors</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @authors.each do |author| %>
+        <tr>
+          <td><%= link_to author.name, author %></td>
+          <td>has written <%= author.books.count %> Amazon bestselling <%=pluralize(author.books.count, 'book')%>.</td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+
+</div>
+

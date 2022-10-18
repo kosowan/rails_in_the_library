@@ -1,5 +1,13 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
+    <div class="navbar-item">
+      <h2 class="title">Amazon Bestselling Books<h2>
+    </div>
+  </div>
+
+  <div></div><hr class="navbar-divider"></div>
+
+  <div class="navbar-start">
     <!-- navbar items, navbar burger... -->
     <a class="navbar-item">
       <%= link_to "Home", root_path %>
@@ -19,5 +27,20 @@
     <a class="navbar-item">
       <%= link_to "Genres", genres_path %>
     </a>
+  </div>
+
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <%= form_with(url: search_books_path, method: :get, local: true) do%>
+          <div class="field is-grouped">
+            <div class="control">
+              <%= text_field_tag(:keywords, nil, class: "input", placeholder: 'Search Books') %>
+            </div>
+            <div class="control">
+              <%= submit_tag("Search", class: "button is-success") %>
+            </div>
+          </div>
+        <% end %>
+    </div>
   </div>
 </nav>
