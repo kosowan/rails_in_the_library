@@ -36,13 +36,19 @@ books.each do |b|
     years.each do |year|
       year = Year.find_or_create_by(year: year)
 
+      puts "invalid year #{year['year']}" unless year&.valid?
+
       BookYear.create(book: book, year: year)
+
+      # puts "invalid bookyear" unless
     end
   else
-    puts "invalid author #{b['Author']} for book #{b['Name']}"
+    puts "invalid author or genre for book #{b['Name']}"
   end
 
 end
+# puts "invalid bookyears" unless
+
 puts "Created #{Author.count} Authors"
 puts "Created #{Genre.count} Genres"
 puts "Created #{Book.count} Books"
