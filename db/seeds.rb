@@ -3,11 +3,11 @@ require "csv"
 # Author.delete_all
 # Genre.delete_all
 # Year.delete_all
-Book.delete_all
-Author.delete_all
-Genre.delete_all
-Year.delete_all
 BookYear.delete_all
+Book.delete_all
+Genre.delete_all
+Author.delete_all
+Year.delete_all
 
 filename = Rails.root.join("db/bestsellers.csv")
 puts "Loading Books from the csv file: #{filename}"

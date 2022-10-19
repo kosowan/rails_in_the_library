@@ -4,10 +4,10 @@ class Book < ApplicationRecord
 
   # validates :title, :rating, :reviews, :price, presence: true
   # validates :title, uniqueness: true,
-  # validates :rating, numericality: true,
+  # validates :rating, numericality: true
   # validates :reviews, :price, numericality: {only_integer: true}
 
-  paginates_per 25
+  # paginates_per 25
 
   has_many :book_years
   has_many :years, through: :book_years
