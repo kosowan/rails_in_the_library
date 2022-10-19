@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.all.order("name ASC")
+    @authors = Author.all.order("name ASC").page(params[:page])
   end
 
   def show
